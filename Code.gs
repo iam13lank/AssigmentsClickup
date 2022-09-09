@@ -6,20 +6,20 @@ function onOpen() {
       .addToUi();
 }
 
-function alertWithMessage(message) {
-  // getUI
-  var ui = SpreadsheetApp.getUi();
+function alertWithMessage(message) { 
+  // getUI and set it to the message
+  message = SpreadsheetApp.getUi();
 
   //Alert to ask user for clicking button
- var result = ui.alert('Click button yes or no',ui.ButtonSet.YES_NO);
+ var result = message.alert('Click button yes or no',message.ButtonSet.YES_NO);
 
   // If result is yes return true, if no return false
-  if (result == ui.Button.YES) {
-    ui.alert('User selected YES')  
+  if (result == message.Button.YES) {
+    message.alert('User selected YES')  
     return true;
   } 
-  else if (result == ui.Button.NO) {
-    ui.alert('User selected No') 
+  else if (result == message.Button.NO) {
+    message.alert('User selected No') 
     return false;  
   }
 }
